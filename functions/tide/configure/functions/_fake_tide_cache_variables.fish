@@ -16,7 +16,7 @@ function _fake_tide_cache_variables
     end
 
     # Same-color-separator color
-    set -gx _fake_tide_color_separator_same_color "$(set_color $fake_tide_prompt_color_separator_same_color)"
+    set -gx _fake_tide_color_separator_same_color "(set_color $fake_tide_prompt_color_separator_same_color)"
 
     # two line prompt
     if contains newline $fake_tide_left_prompt_items
