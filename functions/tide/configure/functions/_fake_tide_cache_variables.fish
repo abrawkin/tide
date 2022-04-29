@@ -6,7 +6,7 @@ function _fake_tide_cache_variables
 
     # git
     contains git $fake_tide_left_prompt_items $fake_tide_right_prompt_items &&
-        set -gx _fake_tide_location_color "$(set_color $fake_tide_git_color_branch)"
+        set -gx _fake_tide_location_color "(set_color $fake_tide_git_color_branch)"
 
     # private_mode
     if contains private_mode $fake_tide_left_prompt_items $fake_tide_right_prompt_items && test -n "$fish_private_mode"
