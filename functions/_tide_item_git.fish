@@ -38,7 +38,7 @@ function _tide_item_git
     end
 
     # Git status/stash + Upstream behind/ahead
-    test $inside_git_dir = true && set -l _set_dir_opt -C $git_dir/..
+    test $inside_git_dir = true && set -l $_set_dir_opt -C $git_dir/..
     # Suppress errors in case we are in a bare repo or there is no upstream
     git_info=(git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null) \
         string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))
