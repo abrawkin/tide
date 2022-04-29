@@ -43,7 +43,7 @@ function _tide_item_git
     git_info=(git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null) \
         string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))
 (0|(?<dirty>.*))\n(0|(?<untracked>.*))(\n(0|(?<behind>.*))\t(0|(?<ahead>.*)))?' \
-        "$(git $_set_dir_opt stash list 2>/dev/null | count
+        "(git $_set_dir_opt stash list 2>/dev/null | count
         string match -r ^UU $git_info | count
         string match -r ^[ADMR]. $git_info | count
         string match -r ^.[ADMR] $git_info | count
